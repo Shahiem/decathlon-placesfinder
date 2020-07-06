@@ -1,5 +1,40 @@
 <script>
+    import { createEventDispatcher } from "svelte";
+
     export let properties, selectedSports;
+
+    const dispatch = createEventDispatcher();
+
+    function buildQuery(array) {
+        let queryString = '';
+
+        let key = 0;
+        Object.keys(array).forEach((paramKey) => {
+            let paramValue = array[paramKey];
+            if (paramValue) {
+                let paramSymbol = (key >= 1 ? ',' : '');
+                queryString += paramSymbol + encodeURI(paramValue);
+
+                key++;
+            }
+        });
+
+        return queryString;
+    }
+    
+    function handleClick() {
+        let address = [
+            properties.address_components.address,
+            properties.address_components.postal_code,
+            properties.address_components.city,
+            properties.address_components.country,
+            properties.address_components.postal_code,
+        ]
+
+        dispatch("route", {
+            q: buildQuery(address)
+        });
+    }
 </script>
 
 <div class="store">
@@ -30,7 +65,7 @@
         </div>
 
         <div class="store__actions">
-            <a href="http://localhost:5000/">Route</a>
+            <a href="#" on:click={handleClick}>Route</a>
         </div>
 
         <div class="store__icons">

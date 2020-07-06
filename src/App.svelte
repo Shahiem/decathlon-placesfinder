@@ -5,6 +5,7 @@
 
     let storeResults = [];
     let selectedSports = [];
+    let searchedAddress = 'Decathlon';
 
     // Create a query string
     function buildQuery(array) {
@@ -22,6 +23,11 @@
         });
 
         return queryString;
+    }
+
+    function findRoute(event) {
+        // Change location in google maps
+       searchedAddress = event.detail.q;
     }
 
     // Get data from places API
@@ -56,7 +62,7 @@
                         {#if store.features.length >= 1}
                             <div class="stores">
                                 {#each store.features as {properties} }
-                                <StoreView {selectedSports} bind:properties={properties}></StoreView>
+                                <StoreView {selectedSports} on:route={findRoute} bind:properties={properties}></StoreView>
                                 {/each}
                             </div>
                         {:else}
@@ -69,7 +75,7 @@
         </div>
 
         <div class="app__right">
-            <iframe title="" width="100%" height="100%" frameborder="0" style="border:0;" src="https://www.google.com/maps/embed/v1/place?q=Decathlon&key=AIzaSyCjwiEMudPJoQ-1WMfjSTeMZ0H1IPTolJw" allowfullscreen></iframe>
+            <iframe title="Map" width="100%" height="100%" frameborder="0" style="border:0;" src="https://www.google.com/maps/embed/v1/place?q={searchedAddress}&key=AIzaSyCjwiEMudPJoQ-1WMfjSTeMZ0H1IPTolJw" allowfullscreen></iframe>
         </div>
     </div>
 </div>
