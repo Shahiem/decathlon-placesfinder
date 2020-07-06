@@ -1,0 +1,37 @@
+/* Components */
+@import 'components/btn';
+@import 'components/carousel';
+@import 'components/store';
+@import 'components/sports';
+@import 'components/form';
+
+/* Template */
+@import 'template/app';
+@import 'template/navigation';
+
+/* Main*/
+body {
+	background: #0082c4;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: Roboto-condensed, Arial Narrow, Roboto, Microsoft Yahei, "\5FAE\8F6F\96C5\9ED1", SimSun, "\5B8B\4F53", sans-serif;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -.01em;
+    text-transform: uppercase;
+    color: #323233;
+}
+
+.container {
+    display: flex;
+    padding: 20px;
+}
+
+.preloader {
+    margin-top: 10px;
+    text-align: center;
+}

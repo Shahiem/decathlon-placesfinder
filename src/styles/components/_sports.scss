@@ -1,0 +1,42 @@
+.sports {
+    width: 100%;
+    display: flex;
+    margin-bottom: 50px;
+
+    .sport {
+        width: 80px;
+        height: 90px;
+        background: #f6fcff;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        text-align: center;
+        margin-right: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 10px;
+        padding: 5px;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+
+        &:focus {
+            border: 1px solid #d9f0fc;
+            background: #fff;
+        }
+
+        &:nth-child(7n) {
+            margin-right: 0;
+        }
+
+        &__name {
+            display: block;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+        }
+    }
+}

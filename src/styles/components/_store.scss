@@ -1,0 +1,69 @@
+.stores {
+    margin-top: 40px;
+    padding-top: 10px;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.store {
+    display: flex;
+    margin-bottom: 20px;
+
+    &:nth-child(odd) {
+        background: #f6fcff;
+    }
+
+    &__actions {
+        padding-top: 10px;
+
+        a {
+            color: #0082c3;
+        }
+    }
+    &__name {
+        margin: 0;
+    }
+
+    &__picture {
+        width: 100px;
+        height: 150px;
+        position: relative;
+
+        img {
+            width: 90px;
+            height: 100px;
+        }
+    }
+
+    &__icon {
+        width: 50px;
+        border-radius: 10px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        text-align: center;
+        font-size: 10px;
+        padding: 5px;
+        border: 1px solid #d9f0fc;
+        background: #fff;
+        margin-right: 10px;
+    }
+
+    &__icons {
+        transform: translate(-50%, -50%);
+        position: relative;
+        top: 50%;
+        left: 50%;
+        display: flex;
+    }
+
+    &__info {
+        padding: 25px;
+    }
+
+    &__address {
+        span {
+            display: block;
+            line-height: 25px;
+        }
+    }
+}
